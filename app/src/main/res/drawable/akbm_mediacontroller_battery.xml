@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:maxLevel="0" android:drawable="@mipmap/akbm_media_player_battery_0" />
+    <item android:maxLevel="5" android:drawable="@mipmap/akbm_media_player_battery_5" />
+    <item android:maxLevel="15" android:drawable="@mipmap/akbm_media_player_battery_15" />
+    <item android:maxLevel="35" android:drawable="@mipmap/akbm_media_player_battery_35" />
+    <item android:maxLevel="49" android:drawable="@mipmap/akbm_media_player_battery_49" />
+    <item android:maxLevel="60" android:drawable="@mipmap/akbm_media_player_battery_60" />
+    <item android:maxLevel="75" android:drawable="@mipmap/akbm_media_player_battery_75" />
+    <item android:maxLevel="90" android:drawable="@mipmap/akbm_media_player_battery_90" />
+    <item android:maxLevel="100" android:drawable="@mipmap/akbm_media_player_battery_100" />
+</level-list>

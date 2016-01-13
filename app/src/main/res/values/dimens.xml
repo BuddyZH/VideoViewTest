@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <dimen name="activity_vertical_margin">10dp</dimen>
+    <dimen name="kui_address_bar_input_helper_text_size">15sp</dimen>
+    <dimen name="kui_address_bar_input_helper_height">36dp</dimen>
+    <dimen name="bookmark_anim_top_margin">45dp</dimen>
+    <dimen name="home_page_content_item_height">39dp</dimen>
+    <dimen name="homepage_section_title_text_size">15sp</dimen>
+    <dimen name="homepage_section_subtitle_text_size">14sp</dimen>
+    <dimen name="homepage_section_content_text_size">13sp</dimen>
+    <dimen name="homepage_toolbar_height">48.5dp</dimen>
+    <dimen name="homepage_toolbar_multi_padding_top_offset">-2dp</dimen>
+    <dimen name="homepage_toolbar_multi_padding_right_offset">3dp</dimen>
+    <dimen name="date_range_title_size">16sp</dimen>
+    
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="media_cpb_stroke_width">1dp</dimen>
+	<dimen name="video_bottom_bar_height">45dp</dimen>
+    <dimen name="video_series_view_width">320dp</dimen>
+	<dimen name="video_sniff_titlebar_height">40dp</dimen>
+	<dimen name="video_sniff_surface_height">152dp</dimen>
+	<dimen name="video_grid_item_width">50dp</dimen>
+	<dimen name="video_grid_item_height3">62dp</dimen>
+	<dimen name="video_grid_img_width">80dp</dimen>
+    <dimen name="video_download_type_title_height">30dp</dimen>
+    <dimen name="video_download_type_title_border">10dp</dimen>
+    <dimen name="video_download_type_title_font_left_size">14sp</dimen>
+    <dimen name="video_local_type_title_font_left_size">12sp</dimen>
+    <dimen name="video_recommend_search_keywords_size">12sp</dimen>
+    <dimen name="video_download_type_title_font_right_size">14sp</dimen>
+    
+    <dimen name="my_video_download_type_title_height">44dp</dimen>
+    <dimen name="my_video_download_type_title_border">15dp</dimen>
+
+    <dimen name="video_local_type_title_height">34dp</dimen>
+    <!-- ==============akbm dimens end   =============== -->
+
+
+    <!-- ==============kc dimens start  ============== -->
+    <dimen name="infobar_text_size">16.0sp</dimen>
+    <dimen name="infobar_subtext_size">14.0sp</dimen>
+    <dimen name="infobar_button_text_size">16.0sp</dimen>
+    <dimen name="infobar_padding">6.0dip</dimen>
+    <dimen name="infobar_button_padding">15.0dip</dimen>
+
+    <!-- in chrome \res\values-sw600dp\dimens.xml -->
+
+    <dimen name="close_all_tab_text_size_digit">15.0dip</dimen>
+    <dimen name="close_all_tab_image_padding">5.0dip</dimen>
+    <!-- ==============kc dimens end  ============== -->
+
+
+    <!-- ==============aui dimens start ============ -->
+    <dimen name="title_height">48dp</dimen>
+    <dimen name="tab_height">40dp</dimen>
+    <dimen name="setting_edge_sides">16dp</dimen>
+    <dimen name="setting_item_height">50dp</dimen>
+    <!-- ==============aui dimens end ============ -->
+
+
+    <!-- crash dialog -->
+    <dimen name="crash_dialog_icon_margin_top">30dp</dimen>
+    <dimen name="crash_dialog_hint_text_margin_top">10dp</dimen>
+    <dimen name="crash_dialog_hint_text_size">17sp</dimen>
+    <dimen name="crash_dialog_contact_text_size">15sp</dimen>
+    <dimen name="crash_dialog_button_text_size">17sp</dimen>
+    <dimen name="crash_dialog_qq_text_size">15sp</dimen>
+
+    <!-- home -->
+    <dimen name="home_address_height">48dp</dimen>
+    <dimen name="home_grid_vertical_space">10dp</dimen>
+    <dimen name="home_grid_horizontal_space">12dp</dimen>
+    <dimen name="home_grid_text_height">32dp</dimen>
+    <dimen name="home_title_item_height">35dp</dimen>
+    <dimen name="home_grid_top_padding">9dp</dimen>
+    <dimen name="home_grid_bottom_padding">11dp</dimen>
+    <dimen name="home_grid_item_round_radius">2dp</dimen>
+    <dimen name="home_grid_item_bubble_margin">0dp</dimen>
+    <dimen name="home_grid_item_text_size">8sp</dimen>
+    <dimen name="home_search_address_margin">15dp</dimen>
+    <dimen name="half_home_search_address_margin">7.5dp</dimen>
+    <dimen name="home_search_address_input_height">37dp</dimen>
+    <dimen name="home_search_address_confirm_button_width">60dp</dimen>
+    <dimen name="dialog_choice_item_height">60dp</dimen>
+
+    <dimen name="home_video_text_padding">3dp</dimen>
+    <!--地址栏中剪切板item的宽高  -->
+    <dimen name="address_clipboard_item_width">55dp</dimen>
+    <dimen name="address_clipboard_item_height">40dp</dimen>
+    <dimen name="address_clipboard_item_divider_padding">5dp</dimen>
+
+    <!-- address bar -->
+    <dimen name="address_search_icon_width">27dp</dimen>
+    <dimen name="address_search_icon_clickarea_width">50dp</dimen>
+    <dimen name="address_search_icon_clickarea_height">33dp</dimen>
+    <dimen name="address_clear_icon_width">36dp</dimen>
+    <dimen name="address_confirm_button_width">59dp</dimen>
+    <dimen name="address_height">48dp</dimen>
+    <dimen name="address_editor_margin_right">132dp</dimen>
+    <dimen name="address_input_horizontal_margin">7dp</dimen>
+    <dimen name="address_view_gap">10dp</dimen>
+    <dimen name="address_view_hint_gap">8dp</dimen>
+    <dimen name="address_icon_width">30dp</dimen>
+    <dimen name="address_icon_width_with_margin">37dp</dimen>
+    <dimen name="address_fav_icon_width">16dp</dimen>
+    <dimen name="address_fav_icon_margin_left">54dp</dimen>
+
+    <!-- 网站分类板块 -->
+    <dimen name="home_section_title_more_padding">0dp</dimen>
+    <dimen name="home_section_head_title_img_margin">14dp</dimen>
+    <dimen name="home_section_block_head_text_size">15sp</dimen>
+    <!-- vertical table -->
+    <dimen name="home_section_table_item_height">43dp</dimen>
+    <!-- 下载SD卡选择界面 -->
+    <dimen name="setting_storage_text_type_width">52dp</dimen>
+    <dimen name="setting_storage_text_type_size">13sp</dimen>
+    <dimen name="setting_storage_text_storage_size">11sp</dimen>
+
+    <!-- 搜索页 -->
+    <dimen name="add_favorite_context_menu_x_offset">6dp</dimen>
+
+    <!-- TabGallery -->
+    <dimen name="tabgallery_title_height">20sp</dimen>
+    <dimen name="tabgallery_title_horizon_magrin_padding">30dp</dimen>
+    <dimen name="tabgallery_title_land_vertical_padding">20dp</dimen>
+    <dimen name="tabgallery_title_port_vertical_padding">25dp</dimen>
+    <dimen name="tabgallery_indictor_paddingY">5dp</dimen>
+    <dimen name="tabgallery_indictor_height">1dp</dimen>
+    <dimen name="tabgallery_folded_items_padding">15dp</dimen>
+    <dimen name="home_video_list_header_tailer_width">3dp</dimen> 
+    <dimen name="home_video_list_header_left_margin">17dp</dimen>
+    <dimen name="home_weather_group_paddingtop">170dp</dimen>
+    <dimen name="home_weather_group_height">236dp</dimen>
+    <dimen name="home_weather_group_padding_bottom">96dp</dimen>
+    <dimen name="home_nav_hor_margin">15dp</dimen>
+    <dimen name="home_card_hor_margin">5dp</dimen>
+    <dimen name="message_icon_width">41dip</dimen>
+    <dimen name="message_content_padding">13dip</dimen>
+    <dimen name="message_content_padding_left">18.5dip</dimen>
+    <dimen name="message_hint_width">50dip</dimen>
+    <dimen name="message_hint_height">37dip</dimen>
+    <dimen name="hot_image_inform_text_size">13sp</dimen>
+    <dimen name="home_section_table_item_tv_padding">9.5dp</dimen>
+    <dimen name="home_section_table_item_divider_height">17dp</dimen>
+    <dimen name="home_video_list_item_divider_width">4dp</dimen>
+    <dimen name="home_video_list_item_image_width">90dp</dimen>
+    <dimen name="home_video_list_item_image_height">129dp</dimen>
+    <dimen name="address_icon_width_with_arrow">47dp</dimen>
+    <dimen name="close_tab_tips_height">45dp</dimen>
+    <dimen name="action_bar_height">48dip</dimen>
+    <dimen name="page_indicator_width">70dip</dimen>
+    <dimen name="page_indicator_height">3dip</dimen>
+    <dimen name="search_input_tab_header_height">40dp</dimen>
+    <dimen name="multi_checkbox_width">30dip</dimen>
+    <dimen name="multi_checkbox_margin_left">10dip</dimen>
+    <dimen name="actionbar_title_padding_right">8dip</dimen>
+    <dimen name="addressbar_left_right_padding">13dp</dimen>
+    <dimen name="most_visit_vertical_margin">5dp</dimen>
+    <dimen name="hot_search_title_padding">11dp</dimen>
+    <dimen name="search_item_height">61dip</dimen>
+    <dimen name="menu_bottom_height">60dip</dimen>
+    <dimen name="set_default_tip1_item_height">60dip</dimen>
+    <dimen name="set_default_tip1_item_margin">10dip</dimen>
+    <dimen name="set_default_tip2_item_height">80dip</dimen>
+    <dimen name="set_default_tip2_item_width">100dip</dimen>
+    <dimen name="set_default_tip2_item_padding">10dip</dimen>
+    <dimen name="set_default_tip2_item_margin">1dip</dimen>
+	<dimen name="incognito_pop_tip_txt_w_padding">10dp</dimen>
+    <dimen name="incognito_pop_tip_txt_h_padding">7dp</dimen>
+    
+    <!-- enter模块 -->
+    <dimen name="enter_pop_space">5dp</dimen>
+    <dimen name="enter_grid_top">27dp</dimen>
+    <dimen name="enter_item_name_text_height">36dp</dimen>
+    <dimen name="enter_item_name_text_size">12dp</dimen>
+    <dimen name="enter_item_name_text_top">0dp</dimen>
+    <dimen name="enter_search_width">304dp</dimen>
+    <dimen name="enter_grid_width">320dp</dimen>
+    <dimen name="enter_item_shape_width">70dp</dimen>
+    <dimen name="enter_item_content_font_size">40dp</dimen>
+    <dimen name="enter_item_name_padding">10dp</dimen>
+    <dimen name="enter_search_hint_margin">10dp</dimen>
+    <dimen name="enter_item_icon_img_size">42dp</dimen>
+
+    <!-- 给的图上下不对称，微调 -->
+    <dimen name="enter_item_icon_margin_bottom">2dp</dimen>
+
+    <!-- Video -->
+    <dimen name="section_title_hor_margin">16dp</dimen>
+    <dimen name="video_sniff_listview_item_height">50dp</dimen>
+    <dimen name="video_series_tab_height">2dp</dimen>
+    <dimen name="video_grid_item_height">35dp</dimen>
+    <dimen name="video_grid_item_space">10dp</dimen>
+    <dimen name="video_series_child_padding_h">8dp</dimen>
+    <dimen name="video_series_child_padding_v">5dp</dimen>
+    <dimen name="video_sniff_tab_width">16dp</dimen>
+    <dimen name="video_grid_item_height2">50dp</dimen>
+    <dimen name="video_series_tab_width">80dp</dimen>
+    <dimen name="akbm_topbar_height">60dip</dimen>
+    <!-- Video -->
+
+	<dimen name="hotword_drawable_padding">3dp</dimen>
+	<dimen name="root_menu_button_space">15dp</dimen>
+	
+	<!-- 广告卡片 -->
+	<dimen name="ad_card_list_item_divider_width">10dp</dimen>
+	<dimen name="ad_card_list_item_margin_v">12dp</dimen>
+	<!-- 第二个广告漏出的一截距离 -->
+	<dimen name="ad_card_list_item_edge_width">20dp</dimen>
+	<dimen name="ad_card_small_icon_height">72dp</dimen>
+	<dimen name="ad_card_text_size">13dp</dimen>
+	<dimen name="ad_card_action_size">13dp</dimen>
+	<dimen name="ad_card_title_text_size">15dp</dimen>
+	<dimen name="ad_card_subtitle_text_size">12dp</dimen>
+	<dimen name="ad_card_title_margin_h">10dp</dimen>
+	<dimen name="ad_card_title_margin_v">8dp</dimen>
+	<dimen name="ad_card_title_height">60dp</dimen>
+	<dimen name="ad_card_text_height">60dp</dimen>
+	<dimen name="ad_card_icon_size">35dp</dimen>
+	<dimen name="ad_action_padding_h">12dp</dimen>
+	<dimen name="ad_action_height">36dp</dimen>
+	
+	<dimen name="meitu_image_maxheight">400dp</dimen>
+	<dimen name="meitu_image_minheight">160dp</dimen>
+
+	<!-- 游戏卡片 -->
+    <dimen name="game_card_text_size">15sp</dimen>
+    <dimen name="game_card_imagetext_size">13sp</dimen>
+    <dimen name="game_card_text_padding_top">5dp</dimen>
+    <dimen name="game_card_text_padding_bottom">5dp</dimen>
+    <dimen name="game_card_imagetext_margin">17dp</dimen>
+    <dimen name="game_card_imagetext_text_top">8dp</dimen>
+    
+	<!-- pull to refresh -->
+    <dimen name="ptr_indicator_right_padding">10dp</dimen>
+    <dimen name="ptr_indicator_corner_radius">12dp</dimen>
+    <dimen name="ptr_indicator_internal_padding">1dp</dimen>
+    <dimen name="ptr_header_footer_left_right_padding">24dp</dimen>
+    <dimen name="ptr_header_footer_top_bottom_padding">12dp</dimen>
+    
+    
+     
+	<!--     news -->
+    <dimen name="news_list_item_margin_left">8dp</dimen>
+    <dimen name="news_list_item_margin_right">8dp</dimen>
+    <dimen name="news_list_item_margin_top">14dp</dimen>
+    <dimen name="news_list_item_margin_bottom">9dp</dimen>
+
+    <dimen name="news_item_title_margin_top">14dp</dimen>
+    <dimen name="news_item_img_margin_bottom">34dp</dimen>
+    <dimen name="news_item_multi_pic_divider">12dp</dimen>
+    <dimen name="news_item_multi_pic_text_divider">18dp</dimen>
+    <dimen name="news_item_tag_margin_bottom">9dp</dimen>
+    <dimen name="news_item_close_margin_bottom">14dp</dimen>
+    <dimen name="news_item_tag_width">24dp</dimen>
+    <dimen name="news_item_tag_height">17dp</dimen>
+    <dimen name="news_item_tag_time_divider">4dp</dimen>
+    <dimen name="news_item_img_title_divider">5dp</dimen>
+
+
+    <dimen name="news_image_divider_width">15dp</dimen>
+    <dimen name="info_item_divider_width">8dp</dimen>
+    <dimen name="info_item_close_divider">5dp</dimen>
+    <dimen name="news_rank_radio_radius">2dp</dimen>
+    <dimen name="news_middle_image_divider_width">16dp</dimen>
+    <dimen name="news_image_text_divider">10dp</dimen>
+    <dimen name="news_text_margin_top">8dp</dimen>
+    <dimen name="news_image_margin_top">10dp</dimen>
+    <dimen name="news_image_default_width">108dp</dimen>
+    <dimen name="news_image_default_height">75dp</dimen>
+    <dimen name="news_images_margin_bottom">30dp</dimen>
+    <dimen name="news_images_text_margin_bottom">5dp</dimen>
+
+    <dimen name="news_item_margin_left">9dp</dimen>
+    <dimen name="news_item_margin_top">10dp</dimen>
+    <dimen name="news_item_divider">6dp</dimen>
+    <dimen name="info_item_tag_width">24dp</dimen>
+
+    <dimen name="news_detail_top_margin">55dp</dimen>
+	<dimen name="splash_margin_top">150dp</dimen>
+	<dimen name="splash_margin_bottom">124dp</dimen>
+    <dimen name="splash_logo_width">526dp</dimen>
+    <dimen name="splash_marketicons_margin_bottom">15dp</dimen>
+    <dimen name="splash_game_area_margin">30dp</dimen>
+    <dimen name="splash_game_title_textsize">15sp</dimen>
+
+    <dimen name="topnews_bigimage_minwidth">120dp</dimen>
+    <dimen name="topnews_title_size">15sp</dimen>
+    <dimen name="setting_spinner_arrow_padding">10dp</dimen>
+    <dimen name="switch_button_width">60dp</dimen>
+    <dimen name="switch_button_height">30dp</dimen>
+    <dimen name="news_list_time">36dp</dimen>
+    <dimen name="news_list_font">13dp</dimen>
+    <dimen name="news_list_title">16dp</dimen>
+    <dimen name="news_list_picture">17dp</dimen>
+    <dimen name="news_list_more">14dp</dimen>
+    <dimen name="news_list_margin">8dp</dimen>
+
+    <dimen name="issued_padding_top">15dp</dimen>
+    <dimen name="menu_group_height">80dp</dimen>
+    
+    <dimen name="home_weather_textsize">10sp</dimen>
+    <dimen name="home_weather_warining_width">16.5dp</dimen>
+    
+     <!-- 影视卡片 -->
+    <dimen name="home_video_card_header_view_height">35dp</dimen>
+    <dimen name="home_video_card_header_view_title_text_size">15sp</dimen>
+    <dimen name="home_video_card_header_view_subtitle_text_size">10sp</dimen>
+    <dimen name="home_video_card_header_view_item_padding">5dp</dimen>
+    <dimen name="home_video_card_header_view_item_margin">10dp</dimen>
+    <dimen name="home_video_card_header_view_item_margin_small">3dp</dimen>
+    <dimen name="home_video_card_header_view_item_right_margin">5dp</dimen>
+    <dimen name="home_video_card_flowtext_margin_left">5dp</dimen>
+    
+    <dimen name="home_weather_left_right_padding">5dp</dimen>
+    <dimen name="home_weather_group_inside_margin">8dp</dimen>
+    
+    
+        <!-- ==================home 天气 ================ -->
+    <dimen name="home_weather_temperature_textsize">40sp</dimen>
+    <dimen name="weather_invisible_separate_height">70dp</dimen>
+    <dimen name="weather_group_err_paddingBottom">10dp</dimen>
+    <dimen name="weather_group_err_paddingTop">17dp</dimen>
+    <dimen name="location_icon">11dp</dimen>
+    <dimen name="weather_location">5dp</dimen>
+    <dimen name="weather_separate_marginLeft">8dp</dimen>
+    <dimen name="weather_separate_marginRight">8dp</dimen>
+    
+    
+	<dimen name="activity_title_height">50dp</dimen>
+	
+	<dimen name="download_item_split_line_height">0.5dp</dimen>
+	<dimen name="bookmark_select_foler_marginleft">15dp</dimen>
+	<dimen name="download_item_height">70dp</dimen>
+	
+    <dimen name="message_title_textsize">12sp</dimen>
+    <dimen name="rank_icon_width">24dp</dimen>
+    <dimen name="rank_icon_height">22dp</dimen>
+	
+	<!-- cmfeedsad -->
+	<dimen name="ultralarge_font_size">24sp</dimen>
+    <dimen name="superlarge_font_size">30sp</dimen>
+    <dimen name="large_font_size">18sp</dimen>
+    <dimen name="normal_font_size">16sp</dimen>
+    <dimen name="charge_status_text_large">14dp</dimen>
+    <dimen name="charge_status_text_normal">12dp</dimen>
+    <dimen name="small_font_size">15sp</dimen>
+    <dimen name="extrasmall_font_size">10sp</dimen>
+    <dimen name="supersmall_font_size">10sp</dimen>
+    <dimen name="placeholder">1dp</dimen>
+    <dimen name="title_text_size">18sp</dimen>
+    <dimen name="single_core_frequency_text_size">18dp</dimen>
+    <dimen name="dialog_title_height">44dp</dimen>
+    <dimen name="dialog_select_height">50dp</dimen>
+    <!-- 模式页面 -->
+    <dimen name="mode_item_padding">14dp</dimen>
+    <dimen name="apply_mode_padding_right">5dp</dimen>
+
+    <!-- 省电Tab -->
+    <!-- 省电模式 / 定时切换 -->
+    <dimen name="alarm_item_height">60dp</dimen>
+    <dimen name="alarm_right_arraw_margin">12dp</dimen>
+    <dimen name="alarm_text_margin_top">10dp</dimen>
+    <dimen name="item_margin_top">14dp</dimen>
+
+    <!-- 一键清理 -->
+    <dimen name="shortcut_onekey_top_offset">25dp</dimen>
+    <dimen name="popup_dialog_width">300dip</dimen>
+    <dimen name="list_big_item_height">60dp</dimen>
+
+
+    <!-- item圆角设定 -->
+    <dimen name="item_radius">10px</dimen>
+
+    <!-- item点击效果圆角设定 -->
+    <dimen name="item_pressed_radius">8px</dimen>
+
+    <!-- 设置页 -->
+    <dimen name="settings_item_high">60dp</dimen>
+    <!-- 充电tab页 -->
+    <dimen name="tab_charge_billow_padding">16dp</dimen>
+    <dimen name="tab_charge_middle_layout_height">70dp</dimen>
+    <dimen name="tab_charge_bottom_layout_height">100dp</dimen>
+    <dimen name="tab_charge_progress_padding">20dp</dimen>
+    <dimen name="tab_charge_progress_fg_ball_diameter">18dp</dimen>
+    <dimen name="tab_charge_progress_fg_ball_radius">9dp</dimen>
+    <dimen name="charge_record_navigate_height">44dp</dimen>
+    <dimen name="charge_record_item_height">47dp</dimen>
+    <dimen name="charge_record_type_height">70dp</dimen>
+    <dimen name="shortcut_widget_text_size">9sp</dimen>
+    <dimen name="shortcut_widget_more_text_size">12sp</dimen>
+    <dimen name="kdialog_message_text_size">14sp</dimen>
+    <dimen name="about_version_font">21sp</dimen>
+    <dimen name="about_log_top">20dp</dimen>
+    <dimen name="about_text_top">60dp</dimen>
+    <dimen name="about_item_width">210dp</dimen>
+    <dimen name="about_item_font">16sp</dimen>
+    <dimen name="about_reserved">12sp</dimen>
+    <dimen name="about_policy">12sp</dimen>
+    <dimen name="about_policy_bottom">3dp</dimen>
+    <dimen name="dot_margin">7dp</dimen>
+
+    <!-- 优化页 -->
+    <dimen name="opt_middle_title">18sp</dimen>
+    <dimen name="opt_small_font_size">14sp</dimen>
+    <dimen name="opt_middle_font_size">16sp</dimen>
+    <!-- 通知栏相关 -->
+    <dimen name="ntf_titie_font_size">17sp</dimen>
+    <dimen name="ntf_content_font_size">15sp</dimen>
+    <dimen name="onekey_toast_height">15sp</dimen>
+    <dimen name="onekey_result_height">15sp</dimen>
+    <dimen name="widget_change_mode_list_item_name">12sp</dimen>
+    <dimen name="widget_change_mode_list_item_desc">12sp</dimen>
+    <dimen name="left_time_lyt_margin_top">190dp</dimen>
+
+
+
+    <!-- 白名单相关 -->
+    <dimen name="white_list_separator_height">30dp</dimen>
+    <dimen name="white_list_separator_left_1">12dp</dimen>
+    <dimen name="white_list_separator_left_2">9dp</dimen>
+    <dimen name="white_list_separator_right">12dp</dimen>
+    <dimen name="white_list_item_height">60dp</dimen>
+    <dimen name="white_list_item_left_1">12dp</dimen>
+    <dimen name="white_list_item_left_2">12dp</dimen>
+    <dimen name="white_list_item_right">12dp</dimen>
+    <dimen name="white_list_item_button_height">28dp</dimen>
+    <dimen name="white_list_item_button_width">60dp</dimen>
+    <dimen name="white_list_item_image_size">42dp</dimen>
+    <dimen name="white_list_item_text_size">16dp</dimen>
+    <dimen name="white_list_separator_text_size">14dp</dimen>
+    <dimen name="white_list_item_button_text_size">15dp</dimen>
+
+    <!-- 扫描结果页白名单弹出对话框 -->
+    <dimen name="smart_white_dialog_width">315dp</dimen>
+    <dimen name="smart_white_dialog_header_height">64dp</dimen>
+    <dimen name="smart_white_dialog_header_icon_to_left">14dp</dimen>
+    <dimen name="smart_white_dialog_header_font_size">18dp</dimen>
+    <dimen name="smart_white_dialog_main_font_size">14dp</dimen>
+    <dimen name="smart_white_dialog_add_font_size">14dp</dimen>
+    <dimen name="smart_white_dialog_back_button_height">40dp</dimen>
+
+    <!-- 温度卡片温度字体 -->
+    <!--  Facebook广告相关 -->
+    <!-- CMB样式的状态栏电量图标相关 -->
+    <dimen name="top">6dp</dimen>
+    <dimen name="bottom">11dp</dimen>
+    <dimen name="single_left">9.5dp</dimen>
+    <dimen name="single_right">11.5dp</dimen>
+    <dimen name="left_left">4.5dp</dimen>
+    <dimen name="left_right">16.5dp</dimen>
+    <dimen name="right_left">15.5dp</dimen>
+    <dimen name="right_right">5.5dp</dimen>
+    <dimen name="left_left_1x">2.5dp</dimen>
+    <dimen name="left_right_1x">18.5dp</dimen>
+    <dimen name="right_left_1x">13.5dp</dimen>
+    <dimen name="right_right_1x">7.5dp</dimen>
+    <!-- 老样式的状态栏电量图标 -->
+    <dimen name="quartern">15.5dp</dimen>
+    <dimen name="top_2">8.5dp</dimen>
+    <dimen name="bottom_2">8.5dp</dimen>
+    <dimen name="single_left_2">10.5dp</dimen>
+    <dimen name="single_right_2">10.5dp</dimen>
+    <dimen name="left_left_2">6dp</dimen>
+    <dimen name="left_right_2">15dp</dimen>
+    <dimen name="right_left_2">15.5dp</dimen>
+    <dimen name="right_right_2">5.5dp</dimen>
+    <dimen name="left_left_1x_2">5.5dp</dimen>
+    <dimen name="left_right_1x_2">15.5dp</dimen>
+    <dimen name="right_left_1x_2">14.5dp</dimen>
+    <dimen name="right_right_1x_2">6.5dp</dimen>
+
+    <dimen name="btn_radius">2dp</dimen>
+    <dimen name="category_height">30dp</dimen>
+    <dimen name="category_icon_length">18dp</dimen>
+    <dimen name="category_count_width">26dp</dimen>
+    <dimen name="category_count_height">18dp</dimen>
+    <dimen name="category_count_half_height">9dp</dimen>
+    <dimen name="category_count_text_size">12sp</dimen>
+    <dimen name="opt_status_count_bg_height">56dp</dimen>
+    <dimen name="opt_button_height">50dp</dimen>
+    <dimen name="opt_button_half_height">25dp</dimen>
+
+  <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- 省电页底部区域 -->
+    <dimen name="bottom_info_value">20sp</dimen>
+    <dimen name="bottom_info_desc">10sp</dimen>
+
+	<!-- 首页 -->
+	<dimen name="battery_status_phone_state_font_size">29sp</dimen>
+	<dimen name="battery_status_remaining_desc_font_size">16sp</dimen>
+	<dimen name="battery_status_btn_detect_margin_top">10dp</dimen>
+	<dimen name="battery_status_top_info_area_margin_top">40dp</dimen>
+	<dimen name="battery_status_bottom_info_area_margin_top">30dp</dimen>
+    <dimen name="opt_btn_lyt_height">72dp</dimen>
+    <dimen name="battery_status_basic_info_item_margin">20dp</dimen>
+
+    <dimen name="detect_button_end_left_margin">250dp</dimen>
+
+    <!-- 猎豹知道卡片涉及的dimens -->
+    <dimen name="cmw_card_item_left_right_margin">15dp</dimen>
+    <dimen name="cmw_bottom_margin">5dp</dimen>
+    <dimen name="cmw_top_margin">17dp</dimen>
+    <dimen name="cmw_item_round_margin">8dp</dimen>
+    <dimen name="cmw_content_font_size">14sp</dimen>
+    <dimen name="cmw_row_bottom_margin">5dp</dimen>
+    
+    <dimen name="screen_news_card_horizontal_padding">10dp</dimen>
+    <dimen name="screen_news_card_vertical_padding">13dp</dimen>
+
+    <!-- Picks 卡片download按钮高度 -->
+    <dimen name="picks_download_btn_height">28dp</dimen>
+
+    <dimen name="battery_status_top_max_height">260dp</dimen>
+    <dimen name="battery_status_top_min_height">100dp</dimen>
+    
+    <!-- 屏保 -->
+    <dimen name="screen_card_tag_right_margin">14dp</dimen>
+
+    <!-- 充电页 圣诞的雪，顶部topMargin的最大值 -->
+    <dimen name="christmas_snow_bottom_margin">68dp</dimen>
+    <dimen name="rank_data_detail_sx_size">13sp</dimen>
+    <dimen name="screen_saver_battery_info_card_height">135dp</dimen>
+    <dimen name="screen_saver_web_view_title_height">32dp</dimen>
+    <dimen name="screen_saver_card_webview_container_padding_top">4dp</dimen>
+    <dimen name="btn_card_manager">40dp</dimen>    <dimen name="game_enter_layout_width">320dp</dimen>
+    <dimen name="game_enter_item_img_bottom">7dp</dimen>
+    <dimen name="game_enter_item_img_top">14dp</dimen>
+    <dimen name="game_enter_item_img_padding">18dp</dimen>
+    
+    <!-- TabGallery -->
+    <dimen name="incognito_tip_txt_t_padding">12dp</dimen>
+    <dimen name="incognito_tip_txt_lr_padding">40dp</dimen>
+    <dimen name="incognito_tip_txt_b_padding">40dp</dimen>
+    <dimen name="incognito_switchView_title_height">16sp</dimen>
+    <dimen name="incognito_switchview_indicator_height">0.5dp</dimen>
+    <dimen name="incognito_switchview_indicator_padding">5dp</dimen>
+    <dimen name="incognito_switchview_indicator_icon_text_padding">10px</dimen>
+    <dimen name="incognito_switchview_height">60dp</dimen>
+    <dimen name="incognito_tipview_padding">40dp</dimen>
+    <dimen name="incognitopoptips_margin_top">44dp</dimen>
+    <dimen name="incognitopoptips_margin_right">20dp</dimen>
+    
+    <dimen name="infobar_icon_margin_right">7dp</dimen>
+    <dimen name="bottom_infobar_content_padding">17dp</dimen>
+    <dimen name="bottom_infobar_content_padding_right">30dp</dimen>
+    
+    <dimen name="dilog_width">303dp</dimen>
+    <dimen name="dilog_content_magin">20dp</dimen>
+    
+    <dimen name="dialog_exit_padding_left">25dp</dimen>
+    <dimen name="dialog_exit_padding_top">5dp</dimen>
+    <dimen name="dialog_exit_text_size">16sp</dimen>
+
+    <dimen name="login_activity_padding">12.5dp</dimen>
+    <dimen name="login_toppic_marginTop">47.5dp</dimen>
+    <dimen name="login__text_size">18sp</dimen>
+
+    <dimen name="bookmarkfragment_actionbar_more_menu_item_high">40dp</dimen>
+    <dimen name="bookmarkfragment_actionbar_more_menu_item_width">136dp</dimen>
+
+    <dimen name="website_activity_padding">13dp</dimen>
+    <dimen name="website_text_padding">10dp</dimen>
+    <dimen name="website_text_size">15sp</dimen>
+    <dimen name="website_edit_confirm_button_top">32dp</dimen>
+    <dimen name="ad_download_textsize">12sp</dimen>
+
+    <dimen name="kui_contextmenu_item_high">40dp</dimen>
+    <dimen name="kui_contextmenu_item_width">130dp</dimen>
+    <dimen name="kui_contextmenu_item_font_size">12sp</dimen>
+
+    <dimen name="search_bar_margin_left">6dp</dimen>
+    <dimen name="grid_item_blank">22dp</dimen>
+    <dimen name="weather_margin_top">12dp</dimen>
+    <dimen name="weather_margin_bottom">11.5dp</dimen>
+    <dimen name="weather_margin_left">14dp</dimen>
+    <dimen name="weather_margin_right">8dp</dimen>
+    <dimen name="indicator_width">33dp</dimen>
+    <dimen name="icon_video">40dp</dimen>
+</resources>

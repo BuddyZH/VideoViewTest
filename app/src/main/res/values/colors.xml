@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/http_authentication_colors.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<!--
+     FIXME: Change the name of this file!  It is now being used generically
+    for the browser
+-->
+<resources>
+
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="white">#ffffffff</color>
+    <color name="red">#ffff0000</color>
+    <color name="white_alpha99">#fdffffff</color>
+    <color name="white_alpha90">#e5ffffff</color>
+    <color name="white_alpha40">#66ffffff</color>
+    <color name="white_alpha50">#80ffffff</color>
+    <color name="white_alpha60">#99ffffff</color>
+    <color name="white_alpha20">#33ffffff</color>
+    <color name="white_alpha15">#26ffffff</color>
+    <color name="black_alpha10">#1a000000</color>
+    <color name="black_alpha50">#80000000</color>
+    <color name="black_alpha20">#33000000</color>
+    <color name="black">#ff000000</color>
+    <color name="black_four_half_alpha">#66000000</color>
+    <color name="black_eighty_alpha">#cc000000</color>
+    <color name="black_half_alpha">#7F000000</color>
+    <color name="black_thirty_alpha">#55000000</color>
+    <color name="dark_blue">#FF3d6cd7</color>
+    <color name="newslist_dark">#FFf8f8f8</color>
+    <color name="transparent">#00000000</color>
+    <color name="yellow_text">#ff7715</color>
+	<color name="samll_shortcut_bg_color">#CCFFFFFF</color>
+    <color name="edit_desc_text_color">#707070</color>
+    <!-- notification, by caisenchuan -->
+    <color name="notification_warning">#FF0000</color>
+    <color name="liebao_orange">#fea100</color>
+
+    <!-- DownloadScreen -->
+    <color name="video_buffering">#ffffff</color>
+    <color name="download_header_view_text">#66000000</color>
+
+    <!-- splash page2 -->
+    <color name="splash_page2_item_normal_back_stroke_color">#ffad4d</color>
+    <color name="splash_page2_item_checked_back_solid_color">#ff884d</color>
+    <color name="splash_page2_confirm_btn_solid_color">#33c930</color>
+    <color name="splash_title_text_color">#878787</color>
+
+    <!-- default title text color of home grid -->
+    <color name="added_text_color">#99404040</color>
+    <color name="quicksite_add_text_color">#CC000000</color>
+    <color name="page_indicator_separate_color">#e0e0e0</color>
+
+    <drawable name="transparent_drawable">#00000000</drawable>
+
+    <color name="video_text_default_color">#cc000000</color>
+
+    <drawable name="default_bmp">#19000000</drawable>
+    <color name="homepage_section_title_text_color">#666666</color>
+    <color name="home_grid_more">#a3a3a3</color>
+    <color name="text_color_0_4_alpha">#66000000</color>
+    <color name="top_news_title_updatetime_color">#ffa4a4a4</color>
+    <color name="homepage_section_content_text_color">#171717</color> <!-- 2.0：#4e7bd7,3.0:0.8alpha -->
+    <color name="homepage_mostvisit_content_text_color">#b3000000</color> <!-- 0.7透明度 -->
+    <color name="search_divider_color">#e0e0e0</color>
+    <!-- 把1像素的图转成颜色值 -->
+    <drawable name="dialog_divider">#59ffffff</drawable>
+    <drawable name="kui_dialog_bg_mask">#4c000000</drawable>
+    <drawable name="kui_menubar_bg_mask">#4c000000</drawable>
+    <drawable name="list_horizontal_divider">#26000000</drawable>
+    <drawable name="list_item_sep_line">#33000000</drawable>
+    <drawable name="search_divider">#e0e0e0</drawable>
+    <drawable name="setting_bg">#ffffffff</drawable>
+    <drawable name="setting_default_browser_item_divider">#26ffffff</drawable>
+    <drawable name="hot_video_divider">#21000000</drawable>
+    <drawable name="task_title_repeat">#254aa3</drawable>
+    <!-- 修改TableLinearLayout 为 DivideGridView 将 hot_video_divider 改为 color hot_video_divider_new -->
+    <color name="hot_video_divider_new">#21000000</color>
+    <color name="download_apk_scanning">#fff97c00</color>
+    <color name="download_apk_malware">#ffcc3333</color>
+    <color name="download_apk_safe">#ff4e9d00</color>
+    <color name="s_download_apk_unknown">#ff999999</color>
+    <color name="home_hot_video_update_text_color">#f58a17</color>
+
+    <!-- ==================================akbm colors start ============================== -->
+    <color name="navigation_has_color">#fff8f0</color>
+    <color name="navigation_no_color">#fdfcfa</color>
+    <color name="akbm_transparent_nightmode">#FF151413</color>
+    <color name="akbm_transparent">#00000000</color>
+    <color name="akbm_mediacontroller_bg">#99000000</color>
+    <!-- ==================================akbm colors end   ============================== -->
+    <!-- ==================================more colors start ============================== -->
+    <color name="more_bg">#fff7f7f7</color>
+    <color name="more_bg_selected">#7ff7f7f7</color>
+    <color name="more_text_color">#ff4b8abd</color>
+    <drawable name="news_list_divider">#ffececec</drawable>
+    <color name="video_search_area_background">#ffececec</color>
+    <color name="more_text_color_selected">#7f8d8d8d</color>
+    <!-- ==================================more colors end   ============================== -->
+
+    <color name="infobar_background_separator">#ff797c7f</color>
+    <color name="infobar_text">#ff000000</color>
+    <color name="tab_title_bar_text">#ffffffff</color>
+    <!-- ==================================kc colors end     ============================== -->
+
+
+    <!-- ================================== Home Colors ============================== -->
+    <color name="home_grid_item_text_color">#B2000000</color>
+    <color name="home_grid_image_default_bg_color">#ff4b93d4</color>
+    <color name="home_grid_image_add_bg_color">#ffafafaf</color>
+    <color name="address_bar_text_color_black_bg">#3f3f3f</color>
+    <color name="address_bar_whitebg">#ff888888</color>
+    <color name="address_bar_separate">#19000000</color>
+    <color name="home_address_bar_separate">#cfcfcf</color>
+    <color name="home_blue">#6f9ed9</color>
+    <color name="home_search_address_confirm_button_color">#3081ea</color>
+    <!-- ================================== Home Colors end ============================== -->
+    <color name="spread_bg_color">#fdfcfa</color>
+    <color name="guide_bg_color">#ff2b2b2b</color>
+    <color name="guide_text_bg_color">#fff4f4f4</color>
+
+    <!-- TabGallery -->
+    <!--<color name="home_page_bg">#fff3f3f3</color>-->
+    <color name="home_page_bg">#ffffffff</color>
+
+    <dimen name="home_card_vertical_margin">3dp</dimen>
+    <dimen name="home_bottom_margin">6dp</dimen>
+    <dimen name="loading_bottom_padding">20dp</dimen>
+
+    <color name="weather_warning_level_1">#ff2b6cd4</color>
+    <color name="weather_warning_level_2">#fffde354</color>
+    <color name="weather_warning_level_3">#ffef7c1a</color>
+    <color name="weather_warning_level_4">#ffe10e25</color>
+    <color name="black_alpha90">#e6000000</color>
+    <color name="black_alpha80">#cc000000</color>
+    <color name="black_alpha40">#66000000</color>
+    <color name="black_alpha30">#4d000000</color>
+    <color name="black_alpha60">#99000000</color>
+    <color name="message_center_divider">#ffededed</color>
+
+    <drawable name="city_item_press_bg">#26000000</drawable>
+    <drawable name="k_actionbar_press_bg">#ffd1d1d1</drawable>
+    <drawable name="drawable_alpha40">#66000000</drawable>
+    <drawable name="drawable_alpha60">#99000000</drawable>
+    <drawable name="drawable_alpha80">#CC000000</drawable>
+
+    <color name="qr_result_btn">#8c000000</color>
+    <color name="qr_result_txt">#bc000000</color>
+    <color name="qr_result_link_txt">#ff2d77bb</color>
+    <color name="dialog_right_text_color">#fa8c13</color>
+    <color name="dialog_divider_color">#e2e2e2</color>
+
+    <drawable name="transparent">#00000000</drawable>
+
+    <color name="multi_window_close_tips_color">#0d3156</color>
+    <color name="page_indicator_bg_color">#f6f6f6</color>
+    <color name="page_indicator_color">#fa8c13</color>
+
+    <drawable name="search_engine_select">#ffEbEbEb</drawable>
+    <drawable name="search_engine_unselect">#00000000</drawable>
+
+    <color name="set_default_text_color">#999999</color>
+    <color name="setting_default_text_corlor">#FF414141</color>
+
+    <!-- enter模块 -->
+    <color name="enter_pop_text_color">#ffffff</color>
+
+    <!-- Video -->
+    <color name="akbm_cache_hint_less_GB">#ffca022c</color>
+    <color name="akbm_white">#ffffffff</color>
+    <color name="expandable_child_title">#ff3c3c3c</color>
+    <color name="expandable_child_extra">#ffaeaeae</color>
+    <color name="video_subscribe_extra">#ffcccccc</color>
+    <color name="video_more_recommend">#ff00a2ff</color>
+    <color name="video_recommend_search">#ff62594f</color>
+    <color name="video_recommend_keywords">#62574f</color>
+    <drawable name="video_recommend_search_keywords_background">#fbf0e4</drawable>
+    <drawable name="video_recommend_search_keywords_stroke">#f7dfc4</drawable>
+    <color name="video_local_left">#6f6f6f</color>
+    
+    
+    <color name="video_loading">#80ffffff</color>
+
+    <!-- ==================================akbm colors start ============================== -->
+    <color name="akbm_white_alpha30">#66ffffff</color>
+    <color name="akbm_f1f1f1">#fff1f1f1</color>
+    <color name="akbm_alpha80_white">#ccffffff</color> <!-- 80%透明度 -->
+    <color name="hsub_text_color">#fffc0104</color>
+    <color name="sdcard_space_bg">#ff72a719</color>
+    <color name="sdcard_space_available_bg">#ffcecece</color>
+    <color name="footer_bg1">#ff2c2c2c</color>
+    <color name="footer_bg">#5A5751</color>
+    <!-- ==================================akbm colors end   ============================== -->
+    <!-- Video -->
+
+
+    <!-- kui_address_bar -->
+    <color name="kui_address_bar_item_though_text_color">#ff8a00</color>
+    <color name="kui_address_bar_item_title_text_color">#3f3f3f</color>
+    <color name="kui_address_bar_item_url_text_color">#66000000</color>
+    <color name="through_split_nightmode">#475B5751</color>
+    <color name="through_split">#47000000</color>
+    <!-- kui_address_bar -->
+
+
+    <!-- 广告卡片 -->
+    <color name="ad_card_main_title_color">#000000</color>
+    <color name="ad_card_title_bg">#ffffff</color>
+    <color name="ad_card_text_bg">#ffffff</color>
+    <color name="ad_card_text_color">#171717</color>
+    <color name="ad_card_title_color">#171717</color>
+    <color name="ad_card_subtitle_color">#a4a4a4</color>
+    <color name="news_item_title_unreaded_color_light">#ff3c3c3c</color>
+    <color name="news_item_title_readed_color_light">#ffaeaeae</color>
+    <color name="news_list_night_bg">#ff2a2929</color>
+    <color name="news_list_light_bg">#fff8f8f8</color>
+    <color name="news_item_time_color_light">#ff777777</color>
+    <color name="news_item_time_color_night">#ff4d4b49</color>
+
+    <drawable name="news_list_item_press_night_bg">#ff573316</drawable>
+    <drawable name="news_list_item_press_bg">#ffff9a49</drawable>
+
+    <color name="input_helper_pressed">#ff202020</color>
+    <color name="news_list">#ff808080</color>
+    <color name="news_list_bg">#fff8f8f8</color>
+    <color name="morenews">#ff2d77bb</color>
+    <color name="dialog_ssl_text_font_color">#333333</color>
+    <color name="sliding_menu_transparent">#99000000</color>
+    <color name="home_weather_textcolor">#e5ffffff</color>
+
+    <!-- 影视卡片 -->
+    <color name="home_video_card_header_view_title_color">#ff344f</color>
+    <color name="download_folder_white">#ffffff</color>
+    <color name="download_folder_pressed">#ededed</color>
+    <color name="download_page_font_color">#666666</color>
+    <color name="btn_foot_delete_enable">#cc000000</color>
+    <color name="btn_foot_delete_unenable">#ffc5c5c5</color>
+    
+    <color name="app_title_black">#333333</color>
+<!--     <color name="white">#F5F6FA</color> -->
+    <color name="back_background">#29000000</color>
+<!--     <color name="transparent">#00000000</color> -->
+    <color name="dialog_button_pressed">#32000000</color>
+    <color name="dark_text_color">#ff57668e</color>
+    <color name="colorBackground">#FF363636</color>
+	<!--     FeedBack colors End -->
+    <color name="news_rank_radio_btn">#fffa8c13</color>
+    <color name="news_list_color">#fff8f8f8</color>
+    
+    <color name="news_interested_radio_btn_text_normal_color">#999999</color>
+    <color name="news_interested_radio_btn_text_active_color">#fa8c12</color>
+    <color name="news_interested_radio_btn_text_normal_color_night_mode">#646463</color>
+    <color name="news_interested_radio_btn_text_active_color_night_mode">#885013</color>
+
+    <color name="share_qr_back">#3e3e3e</color>
+    <color name="splash_bg_color">#f6f6f6</color>
+    <color name="splash_text_color">#333333</color>
+    <color name="splash_spot_selected">#ffa100</color>
+    <color name="splash_spot_unSelected">#33333333</color>	<!-- cmfeedsAd -->
+	<color name="item_normal_light">#343f4b</color>
+   
+    <color name="item_pressed_center_color">#3f4855</color>
+    <color name="item_pressed_end_color">#3f4855</color>
+    <color name="item_pressed_start_color">#3f4855</color>
+    <color name="notify_title_grey">#ff666666</color>
+    <color name="btn_green_normal">#36B531</color>
+    <color name="btn_green_pressed">#30A32C</color>
+    <color name="btn_disabled">#808080</color>
+    <color name="btn_grey_pressed">#ADADAD</color>
+    <color name="btn_grey_normal">#808080</color>
+    <color name="ss_notif_download_summary_color">#919191</color>
+    <color name="quick_open_divider">#767676</color>
+
+    <!-- 剧集本地详情页相关颜色 -->
+    <color name="episode_detail_text_color_gray">#858585</color>
+    <color name="episode_detail_color_gray_dark">#cccccc</color>
+    <color name="episode_detail_text_color_black">#000000</color>
+    <color name="episode_detail_text_color_black_light">#535353</color>
+    <color name="episode_detail_color_orange">#fd8a17</color>
+    <color name="episode_detail_text_color_gray_dark">#666666</color>
+    <color name="episode_detail_background_gray">#f2f2f2</color>
+    <color name="episode_detail_groups_seperator">#e5e5e5</color>
+    
+    <color name="address_input_helper_bg">#e5e5e5</color>
+    <color name="address_input_helper_text_color">#656565</color>
+    <color name="create_games_dialog">#969696</color>
+    
+    <color name="game_enter_text_grey">#808080</color>
+    
+    <color name="game_enter_item">#ffffff</color>
+    <color name="game_enter_item_pressed">#eff6fc</color>
+
+    <!-- 快速打开相关颜色 -->
+    <color name="url_text_gray">#a4a4a4</color>
+    
+    <color name="bottom_infobar_bg">#F3F3F3</color>
+    <color name="bottom_infobar_topdivider">#cfcfd0</color>
+    
+    <!-- 夜间模式 -->
+    <color name="night_mode_mask">#7f151413</color>
+    <color name="night_mode_text_color2">#ff7a28</color>
+    <color name="night_mode_text_color1">#9a9a9a</color>	
+    <color name="night_mode_text_color">#85868b</color>	
+    <color name="night_mode_menu_background_color">#222222</color>	
+    <color name="night_mode_menu_background_color2">#282828</color>	
+    <color name="night_mode_menu_separate_color">#1d1d1d</color>
+    <color name="night_mode_home_address_color">#212736</color>
+    <color name="night_mode_houme_search_text_background_color">#383f50</color>
+    <color name="night_mode_menu_popup_background_color">#282828</color>
+    <color name="night_mode_menu_popup_text_color">#7c7c7c</color>
+    <color name="night_mode_menu_popup_divider">#393939</color>
+    
+    <!-- day_mode -->
+    <color name="card_movie_grid_textcolor">#FF171717</color>    <color name="text_dark_color">#D4CFC2</color>
+    <color name="text_dark_color_IsReaded">#afafaf</color>
+    <color name="home_bg_color">#FF151413</color>
+    <color name="addressbar_popup">#eeeeee</color>
+    
+ <!-- bookmark sync-->
+    <color name="sync_message_color">#b2b2b2</color>
+    <color name="login_warn_color">#ff3539</color>
+    <color name="bookmark_syn_button_linearlayout_separate_color">#d9d9d9</color>
+    <!-- bookmark sync end-->
+
+    <color name="toolbarviewitem_text_down_color">#ff6911</color>
+    <color name="weather_panel_color">#3c6cbc</color>
+
+    <drawable name="nightmode_divider">#ff2c2c2c</drawable>
+    <drawable name="normalmode_divider">#fff4f4f4</drawable>
+    <color name="source_text_color">#dfdfdf</color>
+    <color name="news_list_item_title_color">#373737</color>
+    <color name="news_list_item_source_color">#777777</color>
+    <color name="news_list_duanzi_text_color">#53565A</color>
+
+    <color name="color_text_temperature">#838D99</color>
+    <color name="color_text_city">#9C9C9C</color>
+    <color name="weather_separate">#E5E5E5</color>
+    <color name="text_search_input">#9a9a9a</color>
+    <color name="news_item_pressed">#EEEEEE</color>
+    <color name="grid_add_stroke">#dfdfdf</color>
+
+    <color name="last_screen_tip_line_day">#f3f3f3</color>
+    <color name="last_screen_tip_line_night">#252423</color>
+    <color name="news_list_top_pressed">#eaeaea</color>
+</resources>
