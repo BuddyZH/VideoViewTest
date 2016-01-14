@@ -1,6 +1,8 @@
 package com.example.cm.videoviewtest;
 
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -35,6 +37,7 @@ import android.view.View.OnClickListener;
 import android.view.GestureDetector.OnGestureListener;
 
 import com.example.cm.videoviewtest.utils.DensityUtil;
+import com.example.cm.videoviewtest.utils.MyGestures;
 import com.example.cm.videoviewtest.utils.StringHelper;
 import com.example.cm.videoviewtest.utils.VerticalSeekBar;
 
@@ -44,7 +47,7 @@ import java.text.BreakIterator;
 /**
  * Created by cm on 2015/12/30.
  */
-public class VideoViewActivity extends Activity implements OnClickListener, OnGestureListener {
+public class VideoViewActivity extends Activity implements OnClickListener{
 
     private final String TAG = "main";
     private final String VIDEOPATH = "/storage/emulated/0/03-Handler和Message.mp4";
@@ -52,7 +55,7 @@ public class VideoViewActivity extends Activity implements OnClickListener, OnGe
     private BatteryReceiver batteryReceiver;
     private AudioManager mAM;
     private int mMaxVolume, mCurrentVolume;
-    private int layoutWidth, layoutHeight;
+    private int mTopLayoutHeight,mBottomLayoutHeight;
     private RelativeLayout rootLayout;
 
     private LinearLayout mTopLayout;
@@ -85,40 +88,13 @@ public class VideoViewActivity extends Activity implements OnClickListener, OnGe
     private ImageView gesture_iv_player_volume, gesture_iv_player_bright, gesture_iv_progress;
     private GestureDetector gestureDetector;
     private float mBrightness = -1f;
-    private static final float STEP_PROGRESS = 2f;
-    private static final float STEP_VOLUME = 2f;
-    private boolean firstScroll = false;
-    private int GESTURE_FLAG = 0;// 1,调节进度，2，调节音量,3.调节亮度
-    private static final int GESTURE_MODIFY_PROGESS = 1;
-    private static final int GESTURE_MODIFY_VOLUME = 2;
-    private static final int GESTURE_MODIFY_BRIGHT = 3;
 
     private ObjectAnimator mTopFadeInObjectAnimator;
     private ObjectAnimator mBottomFadeInObjectAnimator;
     private ObjectAnimator mTopFadeOutObjectAnimator;
     private ObjectAnimator mBottomFadeOutObjectAnimator;
 
-    /*@Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        int sec = videoView.getCurrentPosition();
-        boolean isPlaySaved = videoView.isPlaying();
-        outState.putInt("time", sec);
-        outState.putBoolean("isPlay", isPlaySaved);
-        Log.i(TAG,"onSaveInstanceState");
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        int sec = savedInstanceState.getInt("time");
-        boolean isPlaySaved = savedInstanceState.getBoolean("isPlay");
-        videoView.seekTo(sec);
-        if (!isPlaySaved){
-            videoView.pause();
-        }
-        Log.i(TAG,"onRestoreInstanceState");
-    }*/
+    private MyGestures myGestures;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,21 +150,16 @@ public class VideoViewActivity extends Activity implements OnClickListener, OnGe
         gesture_iv_progress = (ImageView) findViewById(R.id.gesture_iv_progress);
         gesture_iv_player_bright = (ImageView) findViewById(R.id.gesture_iv_player_bright);
         gesture_iv_player_volume = (ImageView) findViewById(R.id.gesture_iv_player_volume);
-        gestureDetector = new GestureDetector(this, this);
-        gestureDetector.setIsLongpressEnabled(true);
 
-        rootLayout = (RelativeLayout) findViewById(R.id.videoRoot);
-        ViewTreeObserver viewTreeObserver = rootLayout.getViewTreeObserver();
-        viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                layoutHeight = rootLayout.getHeight();
-                layoutWidth = rootLayout.getWidth();
-            }
-        });
+        myGestures = new MyGestures(this);
+        myGestures.setTouchListener(mGustureTouchListener);
 
 
-        initAnimation();
+        mTopLayoutHeight = mTopLayout.getLayoutParams().height;
+        mBottomLayoutHeight = mBottomLayout.getLayoutParams().height;
+        Log.i(TAG,"mTopLayoutHeight = " + mTopLayoutHeight);
+        Log.i(TAG,"mBottomLayoutHeight = "+ mBottomLayoutHeight);
+
         /*开始播放本地文件*/
         Log.i(TAG, "获取视频文件地址");
         String path = VIDEOPATH;
@@ -273,7 +244,6 @@ public class VideoViewActivity extends Activity implements OnClickListener, OnGe
                 }
                 break;
             case MotionEvent.ACTION_UP:
-                GESTURE_FLAG = 0;
                 gesture_volume_layout.setVisibility(View.GONE);
                 gesture_progress_layout.setVisibility(View.GONE);
                 gesture_bright_layout.setVisibility(View.GONE);
@@ -281,7 +251,7 @@ public class VideoViewActivity extends Activity implements OnClickListener, OnGe
             default:
                 break;
         }
-        return gestureDetector.onTouchEvent(event);
+        return myGestures.onTouchEvent(event);
     }
 
 
@@ -430,8 +400,9 @@ public class VideoViewActivity extends Activity implements OnClickListener, OnGe
             if (mPlayPauseButton != null) {
                 mPlayPauseButton.requestFocus();
             }
-            mTopFadeInObjectAnimator.start();
-            mBottomFadeInObjectAnimator.start();
+            startTopFadeInAnimator();
+            startBottomFadeInAnimator();
+            mVolumeMuteButton.setEnabled(true);
             mScreenLockButton.setVisibility(View.VISIBLE);
             mShowing = true;
         }
@@ -448,8 +419,9 @@ public class VideoViewActivity extends Activity implements OnClickListener, OnGe
         if (mShowing) {
             try {
                 mHandler.removeMessages(SHOW_PROGRESS);
-                mTopFadeOutObjectAnimator.start();
-                mBottomFadeOutObjectAnimator.start();
+                mVolumeMuteButton.setEnabled(false);
+                startTopFadeOutAnimator();
+                startBottomFadeOutAnimator();
                 mVolumeSeekBar.setVisibility(View.GONE);
                 mScreenLockButton.setVisibility(View.GONE);
             } catch (IllegalArgumentException ex) {
@@ -524,100 +496,27 @@ public class VideoViewActivity extends Activity implements OnClickListener, OnGe
         }
     }
 
-    @Override
-    public boolean onDown(MotionEvent e) {
-        firstScroll = true;
-        return false;
-    }
+    private MyGestures.TouchListener mGustureTouchListener = new MyGestures.TouchListener() {
 
-    @Override
-    public void onShowPress(MotionEvent e) {
-
-    }
-
-    @Override
-    public boolean onSingleTapUp(MotionEvent e) {
-        return false;
-    }
-
-    @Override
-    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-        float mOldX = e1.getX(), mOldY = e1.getY();
-        int y = (int) e2.getRawY();
-        if (firstScroll) {
-            if (Math.abs(distanceX) >= Math.abs(distanceY)) {
-                gesture_progress_layout.setVisibility(View.VISIBLE);
-                gesture_volume_layout.setVisibility(View.GONE);
-                gesture_bright_layout.setVisibility(View.GONE);
-                GESTURE_FLAG = GESTURE_MODIFY_PROGESS;
-            } else {
-                if (mOldX > layoutWidth * 3.0 / 5) {
-                    gesture_volume_layout.setVisibility(View.VISIBLE);
-                    gesture_progress_layout.setVisibility(View.GONE);
-                    gesture_bright_layout.setVisibility(View.GONE);
-                    GESTURE_FLAG = GESTURE_MODIFY_VOLUME;
-                }else if (mOldX < layoutWidth * 2.0 / 5){
-                    gesture_bright_layout.setVisibility(View.VISIBLE);
-                    gesture_volume_layout.setVisibility(View.GONE);
-                    gesture_progress_layout.setVisibility(View.GONE);
-                    GESTURE_FLAG = GESTURE_MODIFY_BRIGHT;
-                }
-            }
-        }
-        if (GESTURE_FLAG == GESTURE_MODIFY_PROGESS){
-            int playingTime = videoView.getCurrentPosition() / 1000;
-            int videoTotalTime = videoView.getDuration() / 1000;
-
-            if (Math.abs(distanceX) > Math.abs(distanceY)){
-                if (distanceX >= DensityUtil.dip2px(this, STEP_PROGRESS)){
-                    gesture_iv_progress.setImageResource(R.mipmap.souhu_player_backward);
-                    if (playingTime > 3){
-                        playingTime -= 3;
-                    } else{
-                        playingTime = 0;
-                    }
-                } else if (distanceX <= -DensityUtil.dip2px(this, STEP_PROGRESS)){
-                    gesture_iv_progress.setImageResource(R.mipmap.souhu_player_forward);
-                    if (playingTime < videoTotalTime - 16){
-                        playingTime += 3;
-                    } else {
-                        playingTime = videoTotalTime - 10;
-                    }
-                }
-                if (playingTime < 0){
-                    playingTime = 0;
-                }
-                videoView.seekTo(playingTime * 1000);
-                gesture_tv_progress_time.setText(StringHelper.stringForTime(playingTime * 1000) + "/" + StringHelper.stringForTime(videoTotalTime * 1000));
-            }
+        @Override
+        public void onGestureBegin() {
 
         }
-        else if(GESTURE_FLAG == GESTURE_MODIFY_VOLUME){
-            mCurrentVolume = mAM.getStreamVolume(AudioManager.STREAM_MUSIC);
-            if (Math.abs(distanceY) > Math.abs(distanceX)){
-                if (distanceY >= DensityUtil.dip2px(this, STEP_VOLUME)){
-                    if (mCurrentVolume < mMaxVolume){
-                        mCurrentVolume++;
-                    }
-                    gesture_iv_player_volume.setImageResource(R.mipmap.souhu_player_volume);
-                }else if (distanceY <= -DensityUtil.dip2px(this, STEP_VOLUME)){
-                    if (mCurrentVolume > 0){
-                        mCurrentVolume--;
-                        if (mCurrentVolume == 0){
-                            gesture_iv_player_volume.setImageResource(R.mipmap.souhu_player_silence);
-                        }
-                    }
-                }
-                int percentage = (mCurrentVolume * 100) / mMaxVolume;
-                gesture_tv_volume_percentage.setText(percentage + "%");
-                mAM.setStreamVolume(AudioManager.STREAM_MUSIC, mCurrentVolume, 0);
-            }
+
+        @Override
+        public void onGestureEnd() {
+
         }
-        else if(GESTURE_FLAG == GESTURE_MODIFY_BRIGHT){
+
+        @Override
+        public void onLeftSlide(float percent) {
+            gesture_progress_layout.setVisibility(View.GONE);
+            gesture_volume_layout.setVisibility(View.GONE);
+            gesture_bright_layout.setVisibility(View.VISIBLE);
             gesture_iv_player_bright.setImageResource(R.mipmap.souhu_player_bright);
             mBrightness = getWindow().getAttributes().screenBrightness;
             WindowManager.LayoutParams lpa = getWindow().getAttributes();
-            lpa.screenBrightness = mBrightness + (mOldY - y) / layoutHeight;
+            lpa.screenBrightness = mBrightness + percent;
             if (lpa.screenBrightness > 1.0f){
                 lpa.screenBrightness = 1.0f;
             } else if (lpa.screenBrightness < 0.01f){
@@ -627,20 +526,75 @@ public class VideoViewActivity extends Activity implements OnClickListener, OnGe
             getWindow().setAttributes(lpa);
             gesture_tv_bright_percentage.setText((int) (lpa.screenBrightness * 100) + "%");
         }
-        firstScroll = false;
-        return false;
-    }
 
-    @Override
-    public void onLongPress(MotionEvent e) {
+        @Override
+        public void onRightSlide(float percent,boolean isIncrease) {
+            gesture_progress_layout.setVisibility(View.GONE);
+            gesture_volume_layout.setVisibility(View.VISIBLE);
+            gesture_bright_layout.setVisibility(View.GONE);
+            mCurrentVolume = mAM.getStreamVolume(AudioManager.STREAM_MUSIC);
+            if (isIncrease){
+                gesture_iv_player_volume.setImageResource(R.mipmap.souhu_player_volume);
+                if (mCurrentVolume < mMaxVolume){
+                    mCurrentVolume++;
+                }
+            }else {
+                if (mCurrentVolume > 0){
+                    mCurrentVolume--;
+                    if (mCurrentVolume == 0){
+                        gesture_iv_player_volume.setImageResource(R.mipmap.souhu_player_silence);
+                    }
+                }
+            }
+            int percentage = (mCurrentVolume * 100) / mMaxVolume;
+            gesture_tv_volume_percentage.setText(percentage + "%");
+            mAM.setStreamVolume(AudioManager.STREAM_MUSIC, mCurrentVolume, 0);
+        }
 
-    }
+        @Override
+        public void onHorizonSlide(float percent, boolean isForward) {
+            gesture_progress_layout.setVisibility(View.VISIBLE);
+            gesture_volume_layout.setVisibility(View.GONE);
+            gesture_bright_layout.setVisibility(View.GONE);
+            int playingTime = videoView.getCurrentPosition() / 1000;
+            int videoTotalTime = videoView.getDuration() / 1000;
+            if (isForward){
+                gesture_iv_progress.setImageResource(R.mipmap.souhu_player_forward);
+                if (playingTime < videoTotalTime - 16){
+                    playingTime += 3;
+                } else {
+                    playingTime = videoTotalTime - 10;
+                }
+            }else {
+                gesture_iv_progress.setImageResource(R.mipmap.souhu_player_backward);
+                if (playingTime > 3){
+                    playingTime -= 3;
+                } else{
+                    playingTime = 0;
+                }
+            }
+            if (playingTime < 0){
+                playingTime = 0;
+            }
+            videoView.seekTo(playingTime * 1000);
+            gesture_tv_progress_time.setText(StringHelper.stringForTime(playingTime * 1000) + "/" + StringHelper.stringForTime(videoTotalTime * 1000));
+        }
 
-    @Override
-    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-        return false;
-    }
+        @Override
+        public void onSingleTap() {
 
+        }
+
+        @Override
+        public void onDoubleTap() {
+
+        }
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            return false;
+        }
+    };
 
     class BatteryReceiver extends BroadcastReceiver {
         @Override
@@ -655,45 +609,62 @@ public class VideoViewActivity extends Activity implements OnClickListener, OnGe
 
         }
     }
+    private ObjectAnimator makeAnimator(final Object target, String propertyName, int duration,
+                                        float... values){
+        ObjectAnimator mAnimator = ObjectAnimator.ofFloat(target, propertyName, values);
+        mAnimator.setDuration(duration);
+        return  mAnimator;
+    }
 
-    private void initAnimation() {
-        mTopFadeInObjectAnimator = ObjectAnimator.ofFloat(mTopLayout, "transparentY", 60, 0);
-        mTopFadeOutObjectAnimator = ObjectAnimator.ofFloat(mTopLayout, "transparentY", 0, -60);
-        mBottomFadeInObjectAnimator = ObjectAnimator.ofFloat(mBottomLayout, "transparentY", 45, 0);
-        mBottomFadeOutObjectAnimator = ObjectAnimator.ofFloat(mBottomLayout, "transparentY", 0, -45);
-        mTopFadeInObjectAnimator.setDuration(500);
-        mTopFadeOutObjectAnimator.setDuration(500);
-        mBottomFadeInObjectAnimator.setDuration(500);
-        mBottomFadeOutObjectAnimator.setDuration(500);
+    private void startTopFadeInAnimator(){
+        mTopFadeInObjectAnimator = makeAnimator(mTopLayout, "transparentY", 500, mTopLayoutHeight, 0);
         mTopFadeInObjectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (float) animation.getAnimatedValue();
-                mTopLayout.setAlpha(1 - value / 60);
+                Log.i(TAG,"mTopFadeInObjectAnimator value:"+value);
+                mTopLayout.setAlpha(1 - value / mTopLayoutHeight);
             }
         });
+        mTopFadeInObjectAnimator.start();
+    }
+    private void startTopFadeOutAnimator(){
+        mTopFadeOutObjectAnimator = makeAnimator(mTopLayout, "transparentY", 500, 0, -mTopLayoutHeight);
         mTopFadeOutObjectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (float) animation.getAnimatedValue();
-                mTopLayout.setAlpha(1 + value / 60);
+                Log.i(TAG,"mTopFadeOutObjectAnimator value:"+value);
+                mTopLayout.setAlpha(1 + value / mTopLayoutHeight);
             }
         });
+        mTopFadeOutObjectAnimator.start();
+    }
+    private void startBottomFadeInAnimator(){
+        mBottomFadeInObjectAnimator = makeAnimator(mBottomLayout, "transparentY", 500, mBottomLayoutHeight, 0);
         mBottomFadeInObjectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (float) animation.getAnimatedValue();
-                mBottomLayout.setAlpha(1 - value / 45);
+                Log.i(TAG,"mBottomFadeInObjectAnimator value:"+value);
+                mBottomLayout.setAlpha(1 - value / mBottomLayoutHeight);
             }
         });
+        mBottomFadeInObjectAnimator.start();
+    }
+    private void startBottomFadeOutAnimator(){
+        mBottomFadeOutObjectAnimator = makeAnimator(mBottomLayout, "transparentY", 500, 0, -mBottomLayoutHeight);
         mBottomFadeOutObjectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (float) animation.getAnimatedValue();
-                mBottomLayout.setAlpha(1 + value / 45);
+                Log.i(TAG,"mBottomFadeOutObjectAnimator value:"+value);
+                mBottomLayout.setAlpha(1 + value / mBottomLayoutHeight);
             }
         });
+        mBottomFadeOutObjectAnimator.start();
     }
+
 
     @Override
     protected void onDestroy() {
